@@ -1,55 +1,56 @@
-# London round tables
+# London tables — 120 cm and up
 
-A one-page catalogue of **47 round dining tables** that can be bought into a London flat,
-with photographs, live prices and direct links.
+A one-page catalogue of **129 dining tables**, none smaller than 120 cm along its longest
+side, with photographs, live prices and direct links.
 
 **Live page: https://smnbss.github.io/london-tables-2026/**
 
 Companion to [london-desk-2026](https://smnbss.github.io/london-desk-2026/).
 
-## The organising idea
+## What is on it
 
-The desk page was grouped by *when a thing could arrive*, because a bank-holiday deadline
-decided everything. Nothing is on a deadline here, so this page is grouped by **diameter** —
-in a studio, how much floor the circle eats is the only question that settles anything.
+Sections split **round** from **oval** from **rectangular & square**, because that is the
+decision underneath all the others. Filters for **size**, **shop** and **tone** compose.
 
-| Band | Tables | What it means |
-|---|---|---|
-| Ø70–100 cm | 8 | Two to four seats. Base shape matters more than diameter. |
-| Ø103–120 cm | 31 | The four-seater standard, where both Habitat picks sit. |
-| Ø130 cm and up | 3 | Six seats, ~3.1 m of clear floor once chairs move. |
-| Extendable | 5 | Round now, oval later. |
+| | Tables |
+|---|---|
+| Round | 34 |
+| Oval | 10 |
+| Rectangular & square | 85 |
+| **Total** | **129** |
 
-Filter by shop (IKEA, Sklum, Habitat) and by tone (oak, pale, dark, stone, metal).
-
-## Coverage, and where it stops
+Size bands: 120–139 · 140–179 · 180+ · Extends. An extending table is filed under its
+**open** size and marked *extends*.
 
 | Retailer | Tables | Data quality |
 |---|---|---|
-| Sklum | 25 | Full — live price and stock state from product data |
-| IKEA | 15 | Full — live price, size and delivery flags from the catalogue and stock API |
-| Habitat | 7 | Partial — names, sizes and photographs, but only one confirmed price |
+| Sklum | 83 | Full — live price, stock state and dimensions from all 94 of its dining tables |
+| IKEA | 38 | Full — live price, size and finish count from the search and stock APIs |
+| Habitat | 8 | Partial — names, sizes and photographs, no prices |
 
-**Habitat and Argos block automated requests outright** — HTML, their internal APIs, a
-headless browser and a server-side fetch all return 403. Only their image CDN is reachable,
-which is why the Habitat cards carry photographs but mostly say *check price*. John Lewis,
-Dunelm, Wayfair, La Redoute, Made, Heal's and Furniture Village were all tried and are
-either blocked or render entirely client-side behind bot detection.
+## The findings
 
-## Findings worth keeping
+- **A 120 cm floor removes most of IKEA's round range.** Across a 315-product pool, IKEA
+  sells exactly **five** round tables at 120 cm or over: NÄSINGE, SKOGSTA, MÖRBYLÅNGA and the
+  two extendables. Round and big is where IKEA stops and Sklum starts.
+- **Two pendants in a line is an argument for a rectangle.** A round table wants one light
+  centred over it. The room has two, spaced for a long table.
+- **At 120 cm a rectangle beats a circle on floor.** Ø120 and 120×80 seat the same four
+  people, but the rectangle sits against a wall and leaves a walkway; the circle has to live
+  in the middle of the room.
+- **Only the pendants are black.** A table with a black frame or leg — SKOGSTA, TARSELE,
+  MARIEDAMM, black-legged SKÅLSTA — is the one thing that answers them.
+- **SKÅLSTA is £99 for 140×80** in 18 top-and-leg combinations; oak-effect top on black legs
+  echoes both the floor and the pendants.
 
-- **The two pendants are the constraint nobody mentions.** They hang in a line, spaced for a
-  long table. A round table wants to be centred under one light.
-- **Ø120 is the honest four-seater.** Ø100 seats four only on a single stem or pedestal;
-  with four corner legs it is a two-seater.
-- **Match the floor or contrast it, never near-miss it.** The laminate is a pale grey-toned
-  oak; acacia, walnut and brown-stained oak read warmer and work as deliberate contrast.
-- **IKEA VIHALS is £59** for a Ø107 round table — the cheapest of any size here by a wide margin.
-- **Sklum ships from Spain** and several pieces are on back-order.
+## Notes on sourcing
 
-## How it was built
+Read live on Saturday 29 August 2026. Sklum's own product data was used for dimensions where
+the product title omitted them; Cloudflare rate-limited the crawl at 25 pages, so the
+remaining 69 were re-fetched with pacing — an earlier version of this page was missing 10
+Sklum round tables because of it.
 
-Read live on Saturday 29 August 2026 from the IKEA UK search and stock APIs and Sklum UK
-JSON-LD product data. Habitat entries were assembled from search results plus the Argos
-media CDN. Images are embedded as data URIs, so the page is a single self-contained file
-with no external requests except Google Fonts.
+Habitat and Argos block automated requests outright: HTML, their internal API, a headless
+browser and a server-side fetch all return 403. Only their image CDN answers, which is why
+Habitat cards carry photographs but no price. John Lewis, Dunelm, Wayfair, La Redoute, Made,
+Heal's and Furniture Village were tried and are blocked or render fully client-side.
